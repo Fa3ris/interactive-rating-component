@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-rating-card',
   templateUrl: './rating-card.component.html',
   styleUrls: ['./rating-card.component.scss']
 })
-export class RatingCardComponent implements OnInit {
+export class RatingCardComponent {
 
 
   value: number | undefined = undefined;
@@ -15,9 +15,6 @@ export class RatingCardComponent implements OnInit {
   step: 1|2 = 1;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   ratingSelected(val: number): void {
     this.value = val;
