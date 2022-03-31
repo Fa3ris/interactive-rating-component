@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "test-rating": "ng test --include **/rating-card.component.spec.ts"
+    "test-rating": "ng test --code-coverage --include **/rating-card.component.spec.ts"
   },
   "private": true,
   "dependencies": {
