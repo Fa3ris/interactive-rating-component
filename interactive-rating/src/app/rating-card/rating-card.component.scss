@@ -57,6 +57,18 @@
     color: colors.$Medium_Grey;
 }
 
+.rating:hover {
+    cursor: pointer;
+    color: colors.$White;
+    background-color: colors.$Light_Grey;
+}
+
+.rating.selected {
+    color: colors.$White;
+    background-color: colors.$Orange;
+    cursor: default;
+}
+
 .submit {
     width: 100%;
     border-radius: 20px;

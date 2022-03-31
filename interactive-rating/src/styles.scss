@@ -23,11 +23,15 @@ button {
     border: 0;
     color: colors.$White;
     background-color: colors.$Orange;
-    // font-weight: fonts.$weight_2;
     letter-spacing: 2px; 
 }
 
 button:hover {
     cursor: pointer;
-    
+}
+
+// invert colors when click
+button:active {
+    background-color: colors.$White;
+    color: colors.$Orange;
 }
