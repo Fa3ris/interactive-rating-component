@@ -7,16 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RatingCardComponent implements OnInit {
 
+
+  value: number | undefined = undefined;
+
+  readonly ratings = Array.from({length: 5}, (_, i) => i + 1);
+
+  step: 1|2 = 1;
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  value: number | undefined = undefined;
-
-  readonly ratings = Array.from({length: 5}, (_, i) => i + 1)
-
-  step: 1|2 = 1;
 
   ratingSelected(val: number): void {
     this.value = val;
