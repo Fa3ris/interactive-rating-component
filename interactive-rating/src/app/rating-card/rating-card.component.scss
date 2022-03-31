@@ -15,7 +15,7 @@
 
 
 .card {
-    max-width: layouts.$mobile_width;
+    width: layouts.$mobile_width;
     border-radius: 25px;
     padding: 20px 40px;
     background-color: colors.$Dark_Blue;
@@ -74,4 +74,30 @@
     border-radius: 20px;
     padding: 10px;
     text-transform: uppercase;
+}
+
+.card.step-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    min-height: 367px;
+}
+
+.user-rating {
+    color: colors.$Orange;
+    background-color: colors.$Dark_Blue;
+    padding: 5px 15px;
+    border-radius: 20px;
+    
+}
+
+// reduce saturation of the text only
+.rating-text {
+    filter: saturate(50%);
+}
+
+.description.step-2 {
+    text-align: center;
 }
