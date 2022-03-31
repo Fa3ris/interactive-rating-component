@@ -32,7 +32,7 @@
     </div>
 
     <div class="footer">
-        <button class="submit" (click)="submitClicked()">Submit</button>
+        <button class="submit" data-testid="submit-rating" (click)="submitClicked()">Submit</button>
     </div>
     
 
@@ -42,7 +42,7 @@
         
    <img src="assets/illustration-thank-you.svg" alt="thank you">
 
-   <span class="user-rating"><span class="rating-text"> You selected {{value}} out of 5</span></span> 
+   <span class="user-rating"><span class="rating-text" data-testid="rating-confirmation"> You selected {{value}} out of 5</span></span> 
 
   <h1>Thank you!</h1>
 

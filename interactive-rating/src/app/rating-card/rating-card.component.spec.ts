@@ -80,6 +80,34 @@ describe('RatingCardComponent', () => {
     assertRatingIs(5)
   })
 
+  it('does not submit rating if no rating selected', () => {
+
+    const btn = debugEltByTestId(fixture, "submit-rating");
+    clickDebugElt(btn);
+    fixture.detectChanges()
+
+    assertRatingIs(undefined)
+
+    const ratingConfirmation = debugEltByTestId(fixture, "rating-confirmation");
+    expect(ratingConfirmation).toBeNull()
+  })
+
+  it('submits rating', () => {
+
+    const rating2 = debugEltByTestId(fixture, "rating-2");
+    clickDebugElt(rating2);
+
+    const btn = debugEltByTestId(fixture, "submit-rating");
+    clickDebugElt(btn);
+    fixture.detectChanges()
+
+    assertRatingIs(2)
+    expect(fixture.componentInstance.step).toBe(2)
+
+    const ratingConfirmation = debugEltByTestId(fixture, "rating-confirmation");
+    expect(ratingConfirmation.nativeElement.textContent).toContain("2 out of 5")
+  })
+
 
   function assertRatingIs(val: number|undefined) {
     expect(fixture.componentInstance.value).toBe(val, "rating must be " + val)
