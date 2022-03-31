@@ -1,6 +1,7 @@
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { clickDebugElt, debugEltByTestId } from '../spec-helpers/helpers';
 
 import { RatingCardComponent } from './rating-card.component';
 
@@ -32,17 +33,14 @@ describe('RatingCardComponent', () => {
 
   it('selects the clicked rating', () => {
 
-    const rating2 = (debugElement.query(By.css('[data-testid="2"]')));
+    // const rating2 = (debugElement.query(By.css('[data-testid="2"]')));
+    const rating2 = debugEltByTestId(fixture, "2");
 
     const nativeElt = rating2.nativeElement as HTMLElement
 
     console.log("before click", nativeElt.classList)
 
-    // WARNING: event does not bubble
-    rating2.triggerEventHandler(
-        'click', 
-        null // do not care about Event properties
-    )
+    clickDebugElt(rating2);
 
     console.log("after click but no change detection", nativeElt.classList)
 
