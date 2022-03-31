@@ -33,8 +33,7 @@ describe('RatingCardComponent', () => {
 
   it('selects the clicked rating', () => {
 
-    // const rating2 = (debugElement.query(By.css('[data-testid="2"]')));
-    const rating2 = debugEltByTestId(fixture, "2");
+    const rating2 = debugEltByTestId(fixture, "rating-2");
 
     const nativeElt = rating2.nativeElement as HTMLElement
 
@@ -49,6 +48,42 @@ describe('RatingCardComponent', () => {
     console.log("after click after change detection", nativeElt.classList)
     
     expect(nativeElt.classList.contains("selected")).toBeTrue();
+    assertRatingIs(2)
 
   })
+
+  it('has no rating at first', () => {
+    assertRatingIs(undefined)
+  })
+
+  it('switches selected rating', () => {
+
+    // click on 2 then on 5
+    const rating2 = debugEltByTestId(fixture, "rating-2");
+    clickDebugElt(rating2);
+
+    fixture.detectChanges();
+    const nativeElt = rating2.nativeElement as HTMLElement
+    expect(nativeElt.classList.contains("selected")).toBeTrue();
+    assertRatingIs(2)
+
+
+    const rating5 = debugEltByTestId(fixture, "rating-5");
+    clickDebugElt(rating5);
+
+    fixture.detectChanges();
+
+    expect(nativeElt.classList.contains("selected")).toBeFalse();
+
+    const nativeElt5 = rating5.nativeElement as HTMLElement
+    expect(nativeElt5.classList.contains("selected")).toBeTrue();
+    assertRatingIs(5)
+  })
+
+
+  function assertRatingIs(val: number|undefined) {
+    expect(fixture.componentInstance.value).toBe(val, "rating must be " + val)
+  }
 });
+
+
