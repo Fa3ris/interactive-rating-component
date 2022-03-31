@@ -1,0 +1,65 @@
+@use "layouts" as layouts;
+@use 'colors' as colors;
+
+
+@mixin circle($dim, $padding: 5px) {
+    border-radius: 50%;
+    padding: $padding;
+    width: $dim;
+    height: $dim;
+    background-color: colors.$Dark_Blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card {
+    max-width: layouts.$mobile_width;
+    border-radius: 25px;
+    padding: 20px 40px;
+    background-color: colors.$Dark_Blue;
+    background: radial-gradient(circle at top, hsl(213, 20%, 18%) 0%, hsl(213, 20%, 10%) 100%);
+}
+
+.header {
+    margin-bottom: 15px;
+}
+
+.circle {
+    @include circle(40px);
+}
+
+
+.star-icon {
+  vertical-align: middle;
+  width: 15px;
+}
+
+.content {
+    margin-bottom: 15px;
+}
+
+.description {
+    color: colors.$Medium_Grey;
+    line-height: 1.5;
+}
+
+.ratings {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.rating {
+    @include circle(45px);
+    color: colors.$Medium_Grey;
+}
+
+.submit {
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+    text-transform: uppercase;
+}

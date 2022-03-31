@@ -1,6 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+
+@use 'colors' as colors;
+@use 'fonts' as fonts;
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+html {
+    background-color: colors.$Very_Dark_Blue;
+
+    color: colors.$White;
+
+    font-size: fonts.$p_font_size;
+
+    font-family: fonts.$font_family;
+}
+
+button {
+    border: 0;
+    color: colors.$White;
+    background-color: colors.$Orange;
+    // font-weight: fonts.$weight_2;
+    letter-spacing: 2px; 
+}
+
+button:hover {
+    cursor: pointer;
+    
 }
