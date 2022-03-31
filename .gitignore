@@ -16,3 +16,6 @@
 .prettierignore
 
 .vscode
+
+# test reports
+*.xml
