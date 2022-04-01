@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test-rating": "ng test --code-coverage --include **/rating-card.component.spec.ts",
-    "build-prod": "ng build --prod"
+    "build-prod": "ng build --prod",
+    "build-gh-pages": "ng build --prod --base-href=/interactive-rating-component/"
   },
   "private": true,
   "dependencies": {
