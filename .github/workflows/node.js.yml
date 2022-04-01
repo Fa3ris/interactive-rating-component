@@ -45,7 +45,7 @@ jobs:
     - run: npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI # cannot open regular browser
     - run: npm run build-prod # build to dist
     - name: Deploy to GitHub pages 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.2.5
-        with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: dist # The folder the action should deploy.
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: dist # The folder the action should deploy.
