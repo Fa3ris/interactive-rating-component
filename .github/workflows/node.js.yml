@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: interactive-rating
+        working-directory: ./interactive-rating
 
     strategy:
       matrix:
@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-    - run: echo workspace is ${{github.workspace}}
+    - run: echo workspace is ${{GITHUB_WORKSPACE}}
     - run: echo "begin setup node.js"
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
