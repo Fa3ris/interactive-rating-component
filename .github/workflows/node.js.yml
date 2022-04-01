@@ -43,7 +43,7 @@ jobs:
 #     - run: npm run build --if-present
     - run: echo "🍏 This job's status is ${{ job.status }}."
     - run: npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI # cannot open regular browser
-    - run: npm run build-prod # build to dist
+    - run: npm run build-gh-pages # build to dist
     - name: Deploy to GitHub pages 🚀
       uses: JamesIves/github-pages-deploy-action@v4.2.5
       with:
